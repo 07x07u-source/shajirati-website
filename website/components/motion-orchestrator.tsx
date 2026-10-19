@@ -54,22 +54,9 @@ export function MotionOrchestrator() {
     });
     mutations.observe(document.body, { childList: true, subtree: true });
 
-    let frame = 0;
-    const handlePointerMove = (event: PointerEvent) => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        root.style.setProperty("--pointer-x", ((event.clientX / window.innerWidth) * 2 - 1).toFixed(3));
-        root.style.setProperty("--pointer-y", ((event.clientY / window.innerHeight) * 2 - 1).toFixed(3));
-      });
-    };
-
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-
     return () => {
       observer.disconnect();
       mutations.disconnect();
-      cancelAnimationFrame(frame);
-      window.removeEventListener("pointermove", handlePointerMove);
     };
   }, [pathname]);
 

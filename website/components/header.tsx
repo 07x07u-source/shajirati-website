@@ -51,7 +51,8 @@ export function Header() {
         id="mobile-navigation"
         className={`mobile-nav glass-panel ${open ? "is-open" : ""}`}
         aria-label="قائمة الجوال"
-        hidden={!open}
+        aria-hidden={!open}
+        inert={!open}
       >
         {mainNavigation.map((item) => (
           <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>

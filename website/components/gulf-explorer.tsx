@@ -17,7 +17,7 @@ export function GulfExplorer() {
           <button key={item.id} type="button" role="tab" aria-selected={item.id === countryId} onClick={() => setCountryId(item.id)}>{item.label}</button>
         ))}
       </div>
-      <div className="country-panel" role="tabpanel">
+      <div className="country-panel" role="tabpanel" key={countryId}>
         <div className="country-intro">
           <span>دليل محرر يدويًا</span>
           <h3>{country.label}</h3>

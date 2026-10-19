@@ -1258,3 +1258,106 @@ html { overflow-x: clip; }
   .facts-bento .fact-1 { color: var(--ink); }
   .facts-bento .fact-1 > span { color: #98b8a1 !important; }
 }
+
+/* Quiet motion: reveal the photography and hierarchy without moving the layout. */
+@keyframes route-arrive {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes photo-arrive {
+  from { transform: scale(1.065); }
+  to { transform: scale(1); }
+}
+@keyframes copy-arrive {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes country-arrive {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.route-stage { animation-duration: .52s; }
+.motion-enabled .reveal {
+  transition: opacity .68s var(--premium-ease) var(--reveal-delay, 0ms),
+    transform .82s var(--premium-ease) var(--reveal-delay, 0ms);
+}
+.motion-enabled .reveal.reveal-pending {
+  filter: none;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity .68s var(--premium-ease) var(--reveal-delay, 0ms),
+    transform .82s var(--premium-ease) var(--reveal-delay, 0ms);
+}
+.discovery-hero-image, .page-hero-image, .tree-detail-image img {
+  animation: photo-arrive 1.45s var(--premium-ease) both;
+  transform-origin: center;
+}
+.discovery-hero-copy > *, .page-hero-content > *, .tree-detail-title > * {
+  animation: copy-arrive .72s var(--premium-ease) both;
+}
+.discovery-hero-copy > :nth-child(1), .page-hero-content > :nth-child(1), .tree-detail-title > :nth-child(1) { animation-delay: .1s; }
+.discovery-hero-copy > :nth-child(2), .page-hero-content > :nth-child(2), .tree-detail-title > :nth-child(2) { animation-delay: .18s; }
+.discovery-hero-copy > :nth-child(3), .page-hero-content > :nth-child(3), .tree-detail-title > :nth-child(3) { animation-delay: .26s; }
+.discovery-hero-copy > :nth-child(4), .page-hero-content > :nth-child(4), .tree-detail-title > :nth-child(4) { animation-delay: .34s; }
+.discovery-hero-copy > :nth-child(5), .tree-detail-title > :nth-child(5) { animation-delay: .42s; }
+
+.desktop-nav a, .country-tabs button, .filter-pills button, .related-trees a {
+  transition: color .26s ease, background-color .26s ease, border-color .26s ease,
+    box-shadow .34s ease, transform .34s var(--premium-ease);
+}
+.country-tabs button:active, .filter-pills button:active, .related-trees a:active { transform: scale(.96); }
+.country-tabs button[aria-selected="true"], .filter-pills button.is-active { box-shadow: 0 9px 22px -15px rgba(22,62,38,.7); }
+.country-panel { animation: country-arrive .48s var(--premium-ease) both; }
+.tree-discover-link span, .tree-back span, .saudi-tree-row > a span {
+  display: inline-block;
+  transition: transform .35s var(--premium-ease);
+}
+.directory-card, .saudi-tree-row, .country-tree, .related-trees a { transition: border-color .28s ease, background-color .28s ease; }
+
+@media (max-width: 900px) {
+  .premium-site .mobile-nav {
+    display: grid;
+    gap: 5px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px) scale(.98);
+    transform-origin: top center;
+    transition: opacity .25s ease, transform .38s var(--premium-ease), visibility 0s linear .38s;
+  }
+  .premium-site .mobile-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition-delay: 0s;
+  }
+  .mobile-nav > a {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity .24s ease, transform .34s var(--premium-ease);
+  }
+  .mobile-nav.is-open > a { opacity: 1; transform: none; }
+  .mobile-nav.is-open > a:nth-child(2) { transition-delay: 35ms; }
+  .mobile-nav.is-open > a:nth-child(3) { transition-delay: 70ms; }
+  .mobile-nav.is-open > a:nth-child(4) { transition-delay: 105ms; }
+  .mobile-nav.is-open > a:nth-child(5) { transition-delay: 140ms; }
+}
+
+@media (hover: hover) {
+  .desktop-nav a:hover, .country-tabs button:hover, .filter-pills button:hover { transform: translateY(-2px); }
+  .directory-card:hover, .saudi-tree-row:hover, .country-tree:hover { border-color: rgba(35,75,53,.3); }
+  .directory-card:hover .tree-discover-link span,
+  .saudi-tree-row:hover > a span,
+  .tree-back:hover span { transform: translateX(-5px); }
+  .related-trees a:hover { color: var(--forest); background: rgba(96,142,105,.12); transform: translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-stage, .discovery-hero-image, .page-hero-image, .tree-detail-image img,
+  .discovery-hero-copy > *, .page-hero-content > *, .tree-detail-title > *, .country-panel {
+    animation: none !important;
+  }
+  .motion-enabled .reveal, .motion-enabled .reveal.reveal-pending { opacity: 1; transform: none; transition: none; }
+  .premium-site .mobile-nav, .mobile-nav > a { transition: none; }
+}
