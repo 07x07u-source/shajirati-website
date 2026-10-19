@@ -70,8 +70,8 @@ const result = await command("Runtime.evaluate", {
       scrollWidth: document.documentElement.scrollWidth,
       body: rect('body'),
       header: rect('.glass-nav'),
-      hero: rect('.discovery-hero, .home-hero, .page-hero'),
-      heroGrid: rect('.discovery-hero-grid, .hero-grid'),
+      hero: rect('.home-focus-hero, .discovery-hero, .home-hero, .page-hero'),
+      heroGrid: rect('.home-focus-hero-grid, .discovery-hero-grid, .hero-grid'),
       animations: {
         route: document.querySelector('.route-stage') ? getComputedStyle(document.querySelector('.route-stage')).animationName : null,
         scan: document.querySelector('.scan-line') ? getComputedStyle(document.querySelector('.scan-line')).animationName : null,

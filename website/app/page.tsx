@@ -9,6 +9,7 @@ import { appScreens, faqs } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site-config";
 import { categoryOptions, featuredTree, trees } from "@/lib/trees";
+import heroStyles from "./home-hero.module.css";
 
 export const metadata = pageMetadata(
   "اكتشف عالم الأشجار من حولك",
@@ -44,26 +45,22 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="discovery-hero">
-        <Image className="discovery-hero-image" src="/trees/hero-tree.jpg" alt="شجرة صحراوية كبيرة في مشهد طبيعي" fill priority sizes="100vw" />
-        <div className="discovery-hero-shade" />
-        <div className="container-shell discovery-hero-grid">
-          <div className="discovery-hero-copy reveal">
-            <span className="hero-pill"><Icon name="sparkle" /> دليل الأشجار</span>
-            <h1>اكتشف عالم الأشجار <em>من حولك</em></h1>
-            <p>صوّر شجرة، راجع اسمها المحتمل، واكتشف طريقة العناية بها.</p>
-            <div className="hero-actions">
-              <Link className="button button-light" href="/trees/">اكتشف الأشجار</Link>
-              <Link className="button discovery-ghost" href="/download/">حمّل التطبيق</Link>
-            </div>
-            <div className="hero-source-note"><span>12 نوعًا في الدليل</span><span>مصادر قابلة للمراجعة</span></div>
+      <section className={`home-focus-hero ${heroStyles.hero}`}>
+        <Image className={heroStyles.image} src="/trees/hero-tree.jpg" alt="شجرة صحراوية كبيرة في مشهد طبيعي" fill priority sizes="100vw" />
+        <div className={heroStyles.shade} />
+        <div className={`container-shell home-focus-hero-grid ${heroStyles.content}`}>
+          <div className={heroStyles.heading}>
+            <span className={heroStyles.kicker}><Icon name="sparkle" /> شجيرتي · دليل الأشجار</span>
+            <h1>اكتشف شجرتك <em>واعرفها أكثر</em></h1>
           </div>
-          <div className="hero-app-preview reveal">
-            <div className="phone-shell discovery-phone"><div className="phone-camera" /><Image src="/app/screens/camera.png" alt="شاشة الكاميرا الفعلية في تطبيق شجيرتي" width={390} height={844} priority /></div>
-            <div className="hero-glass-note"><Icon name="leaf" /><span><strong>شجيرتي</strong><small>داخل التطبيق</small></span></div>
+          <div className={heroStyles.intro}>
+            <p>صوّر الشجرة أو تصفّح الدليل العربي لمعرفة نوعها والعناية المناسبة.</p>
+            <div className={heroStyles.actions}>
+              <Link className={heroStyles.primaryAction} href="/trees/">اكتشف الأشجار</Link>
+              <Link className={heroStyles.secondaryAction} href="/download/">حمّل التطبيق <span aria-hidden="true">←</span></Link>
+            </div>
           </div>
         </div>
-        <a className="hero-scroll" href="#world"><span>استكشف</span><i /></a>
       </section>
 
       <section className="section-space container-shell editorial-intro" id="world">
