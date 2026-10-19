@@ -14,7 +14,7 @@ const detailedSteps = [
 export default function HowItWorksPage() {
   return (
     <main>
-      <PageHero eyebrow="كيف يعمل؟" title="صورة جيدة. تحليل محسوب. نتيجة قابلة للمراجعة." description="مسار واضح يهيّئ الصورة ويرسلها لخدمة التعرف ثم يعرض أفضل المرشحين، بدل إخفاء عدم اليقين." />
+      <PageHero eyebrow="كيف يعمل؟" title="صوّر. راجع. تعلّم." description="تبدأ النتيجة بصورة واضحة، وتعرض الأنواع المحتملة مع درجة الثقة." image="/trees/ornamental.jpg" />
       <section className="content-section container-narrow">
         <div className="process-list">
           {detailedSteps.map((step) => <article className="process-item reveal" key={step.number}><div><h2>{step.title}</h2><p>{step.text}</p></div></article>)}

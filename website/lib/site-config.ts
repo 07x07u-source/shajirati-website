@@ -61,8 +61,7 @@ if (googlePlayUrl && new URL(googlePlayUrl).hostname !== "play.google.com") {
 export const siteConfig = {
   name: "شجيرتي",
   englishName: "Shajirati",
-  description:
-    "تطبيق ذكي يساعدك على التعرّف على الأشجار والنباتات واستكشاف معلومات العناية بها.",
+  description: "تعرّف على الأشجار واستكشف طرق العناية بها.",
   shortDescription: "تعرّف على الأشجار من حولك.",
   url: siteUrl,
   officialDomain: explicitSiteUrl,

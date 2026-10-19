@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 export default function TreesPage() {
   return (
     <main>
-      <PageHero eyebrow="دليل شجيرتي" title="أشجار من بيئتنا… ومن حدائقنا" description="مجموعة منتقاة من الأنواع الأصلية في السعودية والخليج، إلى جانب أشجار زينة مستوردة تظهر في مدن المنطقة. كل نوع موصوف بحدود واضحة ومراجع قابلة للمراجعة." />
+      <PageHero eyebrow="دليل شجيرتي" title="أشجار من بيئتنا وحدائقنا" description="أنواع محلية وأشجار زينة شائعة، بأسمائها العلمية ومصادرها." image="/trees/date-palm.jpg" />
       <section className="section-space container-shell tree-directory-section">
         <div className="directory-note">
           <strong>كيف نستخدم كلمة «محلي»؟</strong>
-          <p>تعني هنا أن المصدر النباتي يضع النوع ضمن نطاقه الأصلي في السعودية أو أجزاء من الخليج. أما الأنواع المزروعة للزينة فموسومة بوضوح، حتى لو كانت شائعة في الشوارع والحدائق.</p>
+          <p>تعني أن المصدر يضع النوع ضمن موطنه الأصلي في المنطقة. الأنواع المستوردة موسومة للزينة.</p>
         </div>
         <Suspense fallback={<div className="empty-state">جاري تجهيز الدليل…</div>}><TreeExplorer /></Suspense>
       </section>

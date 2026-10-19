@@ -9,14 +9,14 @@ export const metadata = pageMetadata("عن شجيرتي", "قصة شجيرتي �
 export default function AboutPage() {
   return (
     <main>
-      <PageHero eyebrow="من نحن" title="نبني صلة أوضح بين الإنسان والشجرة" description="شجيرتي تجربة عربية تجمع التصوير والتعرّف النباتي والمعلومة العملية في مكان واحد، مع احترام حدود التقنية وخصوصية المستخدم." />
+      <PageHero eyebrow="من نحن" title="معرفة تبدأ بصورة" description="شجيرتي يقرّب أسماء الأشجار ومعلوماتها إلى المستخدم العربي." />
       <section className="content-section container-shell">
         <div className="story-grid">
           <div className="story-visual reveal"><Image src="/trees/hero-tree.jpg" alt="شجرة في بيئة صحراوية" fill sizes="(max-width: 850px) 100vw, 42vw" /></div>
           <div className="story-copy reveal">
             <span className="eyebrow eyebrow-light">لماذا شجيرتي؟</span>
             <h2>المعرفة تبدأ من لحظة فضول.</h2>
-            <p>رؤية شجرة لا تعرف اسمها لحظة بسيطة، لكنها قد تفتح بابًا لفهم نوعها واحتياجاتها وقيمتها في المكان. شجيرتي يحوّل هذه اللحظة إلى رحلة قصيرة تبدأ بصورة وتنتهي بمعلومة أوضح—أو باعتراف صريح بأن الصورة لا تكفي.</p>
+            <p>صوّر شجرة، راجع اسمها المحتمل، وتعرّف على احتياجاتها. وعندما لا تكفي الصورة، يوضح التطبيق ذلك.</p>
           </div>
         </div>
         <div className="content-grid three section-space">

@@ -9,23 +9,19 @@ export function MotionOrchestrator() {
   useEffect(() => {
     const root = document.documentElement;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const elements = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
-
     root.classList.add("motion-enabled");
 
     if (reducedMotion) {
-      elements.forEach((element) => element.classList.add("is-visible"));
       return;
     }
 
-    elements.forEach((element, index) => {
-      element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
-    });
-
+    const seen = new WeakSet<HTMLElement>();
+    let index = 0;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
+          entry.target.classList.remove("reveal-pending");
           entry.target.classList.add("is-visible");
           observer.unobserve(entry.target);
         });
@@ -33,13 +29,30 @@ export function MotionOrchestrator() {
       { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
     );
 
-    elements.forEach((element) => {
+    const register = (element: HTMLElement) => {
+      if (seen.has(element)) return;
+      seen.add(element);
+      element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+      index += 1;
       if (element.getBoundingClientRect().top < window.innerHeight * 0.9) {
         element.classList.add("is-visible");
       } else {
+        element.classList.add("reveal-pending");
         observer.observe(element);
       }
+    };
+
+    document.querySelectorAll<HTMLElement>(".reveal").forEach(register);
+    const mutations = new MutationObserver((records) => {
+      records.forEach((record) => {
+        record.addedNodes.forEach((node) => {
+          if (!(node instanceof HTMLElement)) return;
+          if (node.matches(".reveal")) register(node);
+          node.querySelectorAll<HTMLElement>(".reveal").forEach(register);
+        });
+      });
     });
+    mutations.observe(document.body, { childList: true, subtree: true });
 
     let frame = 0;
     const handlePointerMove = (event: PointerEvent) => {
@@ -54,6 +67,7 @@ export function MotionOrchestrator() {
 
     return () => {
       observer.disconnect();
+      mutations.disconnect();
       cancelAnimationFrame(frame);
       window.removeEventListener("pointermove", handlePointerMove);
     };

@@ -8,13 +8,13 @@ export const metadata = pageMetadata("تواصل معنا", "قنوات التو
 const contacts = [
   { icon: "mail" as const, title: "الدعم الفني", text: "اذكر نوع الجهاز، إصدار Android، وخطوات ظهور المشكلة. لا تُرسل صورًا شخصية أو مفاتيح وصول." },
   { icon: "shield" as const, title: "طلبات الخصوصية", text: "وضّح نوع الطلب والبيانات التي تعتقد أنها مرتبطة بك. لا ترسل وثائق هوية قبل أن يطلبها مسار رسمي وآمن." },
-  { icon: "sparkle" as const, title: "الشراكات", text: "قدّم نبذة مختصرة عن الجهة والغرض المقترح. لن نعرض أي تعاون على أنه قائم قبل اعتماده." },
+  { icon: "sparkle" as const, title: "الشراكات", text: "عرّفنا بالجهة والفكرة المقترحة." },
 ];
 
 export default function ContactPage() {
   return (
     <main>
-      <PageHero eyebrow="التواصل" title="نوجّه رسالتك إلى المسار الصحيح" description="لا يوجد نموذج إرسال وهمي في هذا الموقع. ستظهر قناة البريد الرسمية فقط بعد اعتمادها في إعدادات المشروع." />
+      <PageHero eyebrow="التواصل" title="تواصل مع شجيرتي" description="الدعم والخصوصية والشراكات في مكان واحد." image="/trees/ficus-benjamina.jpg" />
       <section className="content-section container-shell">
         <div className="contact-options">{contacts.map((item) => <article className="contact-option reveal" key={item.title}><div className="feature-icon"><Icon name={item.icon} /></div><h2>{item.title}</h2><p>{item.text}</p></article>)}</div>
         <div className="container-narrow section-space">

@@ -11,13 +11,13 @@ export default function DownloadPage() {
   const published = siteConfig.appStatus === "published" && Boolean(siteConfig.googlePlayUrl);
   return (
     <main>
-      <PageHero eyebrow="التحميل" title="شجيرتي على Android" description="لن نضع رابطًا إلا عندما يكون رابط المتجر الرسمي جاهزًا ومعتمدًا." />
+      <PageHero eyebrow="التحميل" title="شجيرتي على Android" description="رابط التحميل الرسمي يظهر هنا عند توفره على Google Play." image="/trees/sidr.jpg" />
       <section className="content-section container-shell">
         <div className="download-card reveal">
           <Image src="/brand/app-icon.png" alt="أيقونة شجيرتي" width={112} height={112} />
           <span className="status-chip"><Icon name={published ? "check" : "sparkle"} className="h-4 w-4" /> {published ? "متوفر رسميًا" : "قريبًا على Google Play"}</span>
           <h2>تطبيق شجيرتي</h2>
-          <p>{published ? "استخدم الرابط الرسمي التالي لتنزيل التطبيق من Google Play." : "التطبيق غير معلن كمنشور في إعدادات الموقع بعد. سيظهر زر المتجر تلقائيًا بعد اعتماد رابط Google Play وتحديث الإعدادات المركزية."}</p>
+          <p>{published ? "نزّل التطبيق من Google Play." : "سيظهر رابط Google Play عند نشر التطبيق رسميًا."}</p>
           {published ? <a className="button" href={siteConfig.googlePlayUrl} rel="noopener">التحميل من Google Play</a> : null}
         </div>
         <div className="facts-panel container-narrow reveal">

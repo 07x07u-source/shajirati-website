@@ -8,7 +8,7 @@ export const metadata = pageMetadata("مركز المساعدة", "مساعدة 
 export default function SupportPage() {
   return (
     <main>
-      <PageHero eyebrow="الدعم" title="حلول سريعة قبل التواصل" description="خطوات عملية لأكثر الحالات شيوعًا، مع معلومات تساعدنا على فهم المشكلة إذا استمرت." />
+      <PageHero eyebrow="الدعم" title="كيف نساعدك؟" description="حلول للمشكلات الشائعة ومعلومات مفيدة للإبلاغ عنها." image="/trees/sidr.jpg" />
       <section className="content-section container-shell">
         <div className="content-grid two">
           <InfoCard title="الكاميرا لا تعمل" icon="camera"><ul><li>تحقق من إذن الكاميرا في إعدادات Android.</li><li>أغلق أي تطبيق آخر يستخدم الكاميرا.</li><li>أعد تشغيل التطبيق بعد تغيير الإذن.</li></ul></InfoCard>
