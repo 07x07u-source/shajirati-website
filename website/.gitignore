@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.vercel/
+*.log
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.chrome-cdp/
+.chrome-preview/
+.chrome-preview-mobile/
+preview-*.png

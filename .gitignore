@@ -1,0 +1,31 @@
+# This repository publishes only the official website and its Render blueprint.
+# Keep the Flutter application and all other root-level artifacts out of Git.
+/*
+!/.gitignore
+!/render.yaml
+!/website/
+
+# Defense in depth for secrets and generated files anywhere in the allowed tree.
+**/.env
+**/.env.*
+!/website/.env.example
+**/node_modules/
+**/.next/
+**/out/
+**/build/
+**/coverage/
+**/*.log
+**/*.apk
+**/*.aab
+**/*.jks
+**/*.keystore
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+**/google-services.json
+**/GoogleService-Info.plist
+**/service-account*.json
+**/.dart_tool/
+**/.pub-cache/
+**/.flutter-plugins-dependencies
