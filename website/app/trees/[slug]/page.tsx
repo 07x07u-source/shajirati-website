@@ -60,7 +60,7 @@ export default async function TreePage({ params }: Props) {
   };
 
   return (
-    <main className="tree-detail-page">
+    <main className="inner-page tree-detail-page">
       <section className="tree-detail-hero">
         <div className="tree-detail-image">
           <Image src={tree.image} alt={tree.imageAlt} fill priority sizes="100vw" />

@@ -7,7 +7,7 @@ export const metadata = pageMetadata("مركز المساعدة", "مساعدة 
 
 export default function SupportPage() {
   return (
-    <main>
+    <main className="inner-page support-page">
       <PageHero eyebrow="الدعم" title="كيف نساعدك؟" description="حلول للمشكلات الشائعة ومعلومات مفيدة للإبلاغ عنها." image="/trees/sidr.jpg" />
       <section className="content-section container-shell">
         <div className="content-grid two">

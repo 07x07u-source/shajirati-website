@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function TreesPage() {
   return (
-    <main>
+    <main className="inner-page tree-directory-page">
       <PageHero eyebrow="دليل شجيرتي" title="أشجار من بيئتنا وحدائقنا" description="أنواع محلية وأشجار زينة شائعة، بأسمائها العلمية ومصادرها." image="/trees/date-palm.jpg" />
       <section className="section-space container-shell tree-directory-section">
         <div className="directory-note">

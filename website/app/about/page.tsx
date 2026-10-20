@@ -8,7 +8,7 @@ export const metadata = pageMetadata("عن شجيرتي", "قصة شجيرتي �
 
 export default function AboutPage() {
   return (
-    <main>
+    <main className="inner-page about-page">
       <PageHero eyebrow="من نحن" title="معرفة تبدأ بصورة" description="شجيرتي يقرّب أسماء الأشجار ومعلوماتها إلى المستخدم العربي." />
       <section className="content-section container-shell">
         <div className="story-grid">

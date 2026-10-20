@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { MotionOrchestrator } from "@/components/motion-orchestrator";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
+import "./inner-pages.css";
 
 const plexArabic = localFont({
   src: [

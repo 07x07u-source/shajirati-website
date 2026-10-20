@@ -10,7 +10,7 @@ export const metadata = pageMetadata("تحميل شجيرتي", "حالة توف
 export default function DownloadPage() {
   const published = siteConfig.appStatus === "published" && Boolean(siteConfig.googlePlayUrl);
   return (
-    <main>
+    <main className="inner-page download-page">
       <PageHero eyebrow="التحميل" title="شجيرتي على Android" description="رابط التحميل الرسمي يظهر هنا عند توفره على Google Play." image="/trees/sidr.jpg" />
       <section className="content-section container-shell">
         <div className="download-card reveal">

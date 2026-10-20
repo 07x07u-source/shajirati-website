@@ -13,7 +13,7 @@ const contacts = [
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="inner-page contact-page">
       <PageHero eyebrow="التواصل" title="تواصل مع شجيرتي" description="الدعم والخصوصية والشراكات في مكان واحد." image="/trees/ficus-benjamina.jpg" />
       <section className="content-section container-shell">
         <div className="contact-options">{contacts.map((item) => <article className="contact-option reveal" key={item.title}><div className="feature-icon"><Icon name={item.icon} /></div><h2>{item.title}</h2><p>{item.text}</p></article>)}</div>

@@ -7,7 +7,7 @@ export const metadata = pageMetadata("مميزات التطبيق", "اكتشف 
 
 export default function FeaturesPage() {
   return (
-    <main>
+    <main className="inner-page features-page">
       <PageHero eyebrow="المميزات" title="من الصورة إلى العناية" description="تعرّف على الشجرة، راجع البدائل، واحفظ ما يهمك." image="/trees/date-palm.jpg" />
       <section className="content-section container-shell">
         <Notice>التعرّف النباتي مساعدة تقنية وليس حكمًا علميًا نهائيًا. راجع درجة الثقة والبدائل، واستعن بمختص عند القرارات الزراعية أو الصحية الحساسة.</Notice>

@@ -13,7 +13,7 @@ const detailedSteps = [
 
 export default function HowItWorksPage() {
   return (
-    <main>
+    <main className="inner-page process-page">
       <PageHero eyebrow="كيف يعمل؟" title="صوّر. راجع. تعلّم." description="تبدأ النتيجة بصورة واضحة، وتعرض الأنواع المحتملة مع درجة الثقة." image="/trees/ornamental.jpg" />
       <section className="content-section container-narrow">
         <div className="process-list">
