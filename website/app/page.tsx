@@ -10,6 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site-config";
 import { categoryOptions, featuredTree, trees } from "@/lib/trees";
 import heroStyles from "./home-hero.module.css";
+import sectionStyles from "./home-sections.module.css";
 
 export const metadata = pageMetadata(
   "اكتشف عالم الأشجار من حولك",
@@ -44,7 +45,7 @@ export default function HomePage() {
   const washingtonia = trees.find((tree) => tree.slug === "washingtonia-robusta")!;
 
   return (
-    <main>
+    <main className={sectionStyles.page}>
       <section className={`home-focus-hero ${heroStyles.hero}`}>
         <Image className={heroStyles.image} src="/trees/hero-tree.jpg" alt="شجرة صحراوية كبيرة في مشهد طبيعي" fill priority sizes="100vw" />
         <div className={heroStyles.shade} />

@@ -1,0 +1,718 @@
+.page {
+  overflow: clip;
+}
+
+.page :global(.section-space) {
+  padding-top: clamp(5.5rem, 9vw, 7.5rem);
+}
+
+.page :global(.section-heading) {
+  max-width: 54rem;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+}
+
+.page :global(.section-heading h2) {
+  max-width: 13ch;
+  text-wrap: balance;
+}
+
+.page :global(.section-heading p) {
+  max-width: 38rem;
+}
+
+.page :global(.editorial-intro) {
+  grid-template-columns: minmax(0, 1.05fr) minmax(19rem, .78fr);
+  gap: clamp(3rem, 8vw, 8.5rem);
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+}
+
+.page :global(.editorial-image) {
+  min-height: clamp(31rem, 54vw, 43rem);
+  border-radius: 2rem 7rem 2rem 2rem;
+  box-shadow: 0 2.25rem 5rem -3.75rem rgba(11, 48, 25, .72);
+}
+
+.page :global(.editorial-image span),
+.page :global(.featured-tree-image > span) {
+  border-color: rgba(255, 255, 255, .3);
+  background: rgba(8, 28, 15, .36);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  backdrop-filter: blur(14px) saturate(125%);
+}
+
+.page :global(.editorial-copy h2),
+.page :global(.featured-tree-copy h2),
+.page :global(.app-journey-copy h2),
+.page :global(.why-grid h2) {
+  max-width: 10ch;
+  font-size: clamp(2.7rem, 5vw, 4.85rem);
+  text-wrap: balance;
+}
+
+.page :global(.editorial-copy li) {
+  padding-block: .85rem;
+}
+
+.page :global(.saudi-trees-section) {
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+  background: linear-gradient(180deg, rgba(222, 232, 217, .5), rgba(240, 237, 226, .3));
+}
+
+.page :global(.saudi-tree-row) {
+  grid-template-columns: 2.5rem 9.5rem minmax(0, 1fr) auto;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  min-height: 11.5rem;
+  padding-block: 1rem;
+}
+
+.page :global(.tree-row-image) {
+  height: 9.5rem;
+  border-radius: 1.35rem;
+}
+
+.page :global(.tree-row-copy h3) {
+  font-size: clamp(1.65rem, 2.5vw, 2.45rem);
+  line-height: 1.15;
+}
+
+.page :global(.saudi-tree-row > a) {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  padding: .4rem 0;
+  transition: gap .35s var(--premium-ease), color .25s ease;
+}
+
+.page :global(.saudi-tree-row:hover > a) {
+  gap: .8rem;
+  color: var(--forest-soft);
+}
+
+.page :global(.ornamental-section) {
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(120, 188, 132, .15), transparent 35rem),
+    linear-gradient(135deg, #06150b, #123822);
+}
+
+.page :global(.ornamental-rail) {
+  gap: clamp(1rem, 2.2vw, 1.6rem);
+  margin-inline-end: calc((100vw - min(100% - 40px, 1180px)) / -2);
+  padding: .5rem max(1.25rem, calc((100vw - min(100% - 40px, 1180px)) / 2)) 1.5rem 0;
+  scrollbar-width: none;
+}
+
+.page :global(.ornamental-rail::-webkit-scrollbar),
+.page :global(.category-gallery::-webkit-scrollbar) {
+  display: none;
+}
+
+.page :global(.ornamental-slide) {
+  min-width: min(23.5rem, 78vw);
+}
+
+.page :global(.ornamental-slide > div) {
+  height: clamp(25rem, 42vw, 31rem);
+  border-radius: 1.75rem;
+}
+
+.page :global(.ornamental-slide > span) {
+  margin-top: 1.25rem;
+}
+
+.page :global(.ornamental-slide h3) {
+  margin-block: .2rem;
+}
+
+.page :global(.ornamental-slide a) {
+  display: inline-block;
+  margin-top: .25rem;
+  border-bottom: 1px solid currentColor;
+}
+
+.page :global(.category-section) {
+  padding-bottom: clamp(1rem, 4vw, 3rem);
+}
+
+.page :global(.category-gallery) {
+  grid-template-columns: 1.05fr .95fr .95fr;
+  grid-template-rows: 17.5rem 15rem;
+  gap: .8rem;
+}
+
+.page :global(.category-tile) {
+  border-radius: 1.6rem;
+}
+
+.page :global(.category-tile::after) {
+  background: linear-gradient(0deg, rgba(4, 23, 11, .84), rgba(4, 23, 11, .06) 72%);
+}
+
+.page :global(.category-tile > span) {
+  inset: auto 1.25rem 1.25rem;
+}
+
+.page :global(.category-tile strong) {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.page :global(.gulf-section) {
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+  background: linear-gradient(180deg, #e8efe6, #e2eadf);
+}
+
+.page :global(.country-tabs) {
+  justify-content: flex-start;
+  gap: .4rem;
+  padding-bottom: .85rem;
+  scrollbar-width: none;
+}
+
+.page :global(.country-tabs button) {
+  min-height: 2.75rem;
+  padding-inline: 1rem;
+  background: transparent;
+}
+
+.page :global(.country-tabs button[aria-selected="true"]) {
+  box-shadow: none;
+}
+
+.page :global(.country-panel) {
+  grid-template-columns: minmax(15rem, .72fr) minmax(0, 1.28fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.page :global(.country-intro h3) {
+  font-size: clamp(2.7rem, 5vw, 4.65rem);
+}
+
+.page :global(.country-trees) {
+  gap: 0 1.25rem;
+}
+
+.page :global(.country-tree) {
+  min-height: 6rem;
+}
+
+.page :global(.country-tree img) {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: .9rem;
+}
+
+.page :global(.featured-tree-section) {
+  grid-template-columns: minmax(0, 1.08fr) minmax(19rem, .78fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+}
+
+.page :global(.featured-tree-image) {
+  min-height: clamp(33rem, 53vw, 42rem);
+  border-radius: 7rem 2rem 2rem 2rem;
+}
+
+.page :global(.featured-tree-copy blockquote) {
+  margin-block: 1.6rem;
+  color: var(--forest);
+}
+
+.page :global(.identification-section) {
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+  background:
+    radial-gradient(circle at 80% 0%, rgba(93, 155, 105, .16), transparent 34rem),
+    #0b2414;
+}
+
+.page :global(.clue-grid article) {
+  min-height: 11.5rem;
+  padding: 1.45rem;
+}
+
+.page :global(.clue-grid h3) {
+  margin-top: 1.5rem;
+}
+
+.page :global(.identification-note) {
+  max-width: none;
+  margin-top: 2rem;
+}
+
+.page :global(.app-journey-section) {
+  padding-bottom: clamp(5rem, 8vw, 7rem);
+  background: linear-gradient(180deg, #f5eee3, #e7eee5);
+}
+
+.page :global(.app-journey-grid) {
+  grid-template-columns: minmax(18rem, .78fr) minmax(0, 1.22fr);
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.page :global(.app-journey-copy li) {
+  padding-block: .8rem;
+}
+
+.page :global(.app-journey-copy li span) {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--line);
+  background: transparent;
+}
+
+.page :global(.app-screens-stack) {
+  min-height: 36rem;
+}
+
+.page :global(.stack-screen) {
+  width: min(15.5rem, 35%);
+  border-width: .28rem;
+  border-radius: 2.2rem;
+  box-shadow: 0 2.5rem 4rem -2.4rem rgba(12, 42, 25, .65);
+  transition: translate .6s var(--premium-ease), rotate .6s var(--premium-ease);
+}
+
+.page :global(.app-screens-stack:hover .stack-1) { translate: 0 -.5rem; }
+.page :global(.app-screens-stack:hover .stack-2) { translate: -.4rem .25rem; rotate: -9deg; }
+.page :global(.app-screens-stack:hover .stack-3) { translate: .4rem .25rem; rotate: 9deg; }
+
+.page :global(.care-section) {
+  padding-bottom: clamp(1rem, 4vw, 3rem);
+}
+
+.page :global(.care-editorial article) {
+  min-height: 13rem;
+  padding: 1.5rem;
+}
+
+.page :global(.care-editorial h3) {
+  margin-top: 1.8rem;
+}
+
+.page :global(.quick-facts-section) {
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+  background: rgba(223, 232, 221, .64);
+}
+
+.page :global(.facts-bento article),
+.page :global(.facts-bento .fact-1) {
+  min-height: 12rem;
+  padding: 1.4rem 1.1rem;
+}
+
+.page :global(.facts-bento article h3),
+.page :global(.facts-bento .fact-1 h3) {
+  margin-top: 1.5rem;
+}
+
+.page :global(.comparison-section) {
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+}
+
+.page :global(.comparison-grid) {
+  gap: .75rem;
+}
+
+.page :global(.comparison-grid article) {
+  min-height: clamp(28rem, 48vw, 35rem);
+  border-radius: 1.8rem;
+}
+
+.page :global(.comparison-grid article > div) {
+  inset: auto clamp(1.2rem, 3vw, 2rem) clamp(1.2rem, 3vw, 2rem);
+}
+
+.page :global(.comparison-vs) {
+  width: 3.75rem;
+  height: 3.75rem;
+  font-size: .76rem;
+}
+
+.page :global(.comparison-caveat) {
+  max-width: 47rem;
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+.page :global(.why-section) {
+  padding-bottom: clamp(5.5rem, 9vw, 7.5rem);
+}
+
+.page :global(.why-grid) {
+  grid-template-columns: minmax(0, 1fr) minmax(19rem, .78fr);
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.page :global(.why-grid ul) {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.page :global(.homepage-faq) {
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.page :global(.faq-item summary) {
+  min-height: 4.5rem;
+}
+
+.page :global(.download-stage) {
+  min-height: 31rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+  border-radius: 2.5rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(134, 183, 150, .26), transparent 25rem),
+    linear-gradient(140deg, #0a2112, #1c4a2e);
+}
+
+.page :global(.download-stage h2) {
+  max-width: 11ch;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.page :global(.homepage-directory) {
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.page :global(.tree-search) {
+  max-width: none;
+  margin-inline: 0;
+}
+
+.page :global(.tree-search input) {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding-inline: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.page :global(.filter-pills) {
+  justify-content: flex-start;
+}
+
+.page :global(.directory-grid) {
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.page :global(.directory-image) {
+  height: clamp(15rem, 26vw, 20rem);
+}
+
+@media (max-width: 960px) {
+  .page :global(.editorial-intro),
+  .page :global(.featured-tree-section),
+  .page :global(.app-journey-grid),
+  .page :global(.why-grid) {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .page :global(.editorial-copy h2),
+  .page :global(.featured-tree-copy h2),
+  .page :global(.app-journey-copy h2),
+  .page :global(.why-grid h2) {
+    max-width: 13ch;
+  }
+
+  .page :global(.country-panel) {
+    grid-template-columns: 1fr;
+  }
+
+  .page :global(.app-screens-stack) {
+    min-height: 33rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .page :global(.section-space) {
+    padding-top: 4.5rem;
+  }
+
+  .page :global(.section-heading) {
+    margin-bottom: 1.8rem;
+  }
+
+  .page :global(.section-heading h2) {
+    max-width: 14ch;
+  }
+
+  .page :global(.editorial-intro),
+  .page :global(.featured-tree-section) {
+    gap: 2.25rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .page :global(.editorial-image),
+  .page :global(.featured-tree-image) {
+    min-height: 25rem;
+    border-radius: 1.5rem 3.5rem 1.5rem 1.5rem;
+  }
+
+  .page :global(.editorial-copy h2),
+  .page :global(.featured-tree-copy h2),
+  .page :global(.app-journey-copy h2),
+  .page :global(.why-grid h2) {
+    margin-block: .8rem 1rem;
+    font-size: clamp(2.35rem, 11vw, 3.4rem);
+  }
+
+  .page :global(.saudi-trees-section),
+  .page :global(.ornamental-section),
+  .page :global(.gulf-section),
+  .page :global(.identification-section),
+  .page :global(.app-journey-section),
+  .page :global(.quick-facts-section),
+  .page :global(.why-section) {
+    padding-bottom: 4.5rem;
+  }
+
+  .page :global(.saudi-tree-row) {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: .9rem;
+    min-height: 0;
+    padding-block: .9rem;
+  }
+
+  .page :global(.tree-row-image) {
+    height: 6.5rem;
+    border-radius: 1rem;
+  }
+
+  .page :global(.tree-row-copy h3) {
+    margin-top: .15rem;
+    font-size: 1.35rem;
+  }
+
+  .page :global(.tree-row-copy p) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .page :global(.tree-row-copy small),
+  .page :global(.tree-row-index) {
+    display: none;
+  }
+
+  .page :global(.saudi-tree-row > a) {
+    grid-column: 2;
+    justify-self: start;
+    min-height: 0;
+    padding-block: .15rem;
+    font-size: .8rem;
+  }
+
+  .page :global(.ornamental-rail) {
+    margin-inline-end: -1.125rem;
+    padding-inline-end: 1.125rem;
+  }
+
+  .page :global(.ornamental-slide) {
+    min-width: 76vw;
+  }
+
+  .page :global(.ornamental-slide > div) {
+    height: 24rem;
+    border-radius: 1.4rem;
+  }
+
+  .page :global(.category-section) {
+    width: 100%;
+    padding-inline-start: 1.125rem;
+  }
+
+  .page :global(.category-section .section-heading) {
+    padding-inline-end: 1.125rem;
+  }
+
+  .page :global(.category-gallery) {
+    display: grid;
+    grid-auto-columns: 76vw;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-template-rows: 18rem;
+    gap: .75rem;
+    overflow-x: auto;
+    padding: 0 0 1rem 1.125rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .page :global(.category-tile),
+  .page :global(.category-1),
+  .page :global(.category-4),
+  .page :global(.category-5) {
+    grid-column: auto;
+    grid-row: 1;
+    border-radius: 1.35rem;
+    scroll-snap-align: start;
+  }
+
+  .page :global(.country-tabs) {
+    margin-inline: -1.125rem;
+    padding-inline: 1.125rem;
+  }
+
+  .page :global(.country-panel) {
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+  }
+
+  .page :global(.country-intro h3) {
+    font-size: 3rem;
+  }
+
+  .page :global(.country-tree) {
+    min-height: 5.25rem;
+  }
+
+  .page :global(.clue-grid article) {
+    min-height: 9.25rem;
+    padding: 1rem;
+  }
+
+  .page :global(.clue-grid h3) {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .page :global(.clue-grid p) {
+    font-size: .85rem;
+  }
+
+  .page :global(.app-journey-grid) {
+    gap: 1.5rem;
+  }
+
+  .page :global(.app-screens-stack) {
+    min-height: 27rem;
+  }
+
+  .page :global(.stack-screen) {
+    width: 11.5rem;
+    border-radius: 1.75rem;
+  }
+
+  .page :global(.stack-1) { inset: 0 27% auto auto; }
+  .page :global(.stack-2) { inset: 3rem auto auto 0; }
+  .page :global(.stack-3) { inset: 5.5rem 0 auto auto; }
+
+  .page :global(.care-editorial) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page :global(.care-editorial article) {
+    min-height: 11rem;
+    padding: 1rem .9rem;
+  }
+
+  .page :global(.care-editorial h3) {
+    margin-top: 1.2rem;
+    font-size: 1.35rem;
+  }
+
+  .page :global(.care-editorial p) {
+    font-size: .9rem;
+    line-height: 1.65;
+  }
+
+  .page :global(.facts-bento article),
+  .page :global(.facts-bento .fact-1) {
+    padding-block: 1.1rem;
+  }
+
+  .page :global(.comparison-section) {
+    padding-bottom: 4.5rem;
+  }
+
+  .page :global(.comparison-grid) {
+    gap: .65rem;
+  }
+
+  .page :global(.comparison-grid article) {
+    min-height: 23rem;
+    border-radius: 1.35rem;
+  }
+
+  .page :global(.comparison-vs) {
+    inset: 50% 50% auto auto;
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .page :global(.comparison-grid article h3) {
+    font-size: 1.65rem;
+  }
+
+  .page :global(.comparison-grid article p) {
+    font-size: .9rem;
+    line-height: 1.55;
+  }
+
+  .page :global(.comparison-caveat) {
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .page :global(.faq-item summary) {
+    min-height: 4rem;
+    padding-block: 1rem;
+  }
+
+  .page :global(.download-stage) {
+    min-height: 27rem;
+    width: calc(100% - 2.25rem);
+    margin-top: 4.5rem;
+    padding: 3.5rem 1.25rem;
+    border-radius: 2rem;
+  }
+
+  .page :global(.download-stage h2) {
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+  }
+
+  .page :global(.homepage-directory) {
+    padding-bottom: 4.5rem;
+  }
+
+  .page :global(.directory-image) {
+    height: 17rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .page :global(.care-editorial) {
+    grid-template-columns: 1fr;
+  }
+
+  .page :global(.care-editorial article) {
+    min-height: 0;
+    padding-inline: 0;
+    border-inline-end: 0;
+  }
+
+  .page :global(.stack-screen) {
+    width: 10.25rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .page :global(.saudi-trees-section),
+  .page :global(.gulf-section),
+  .page :global(.app-journey-section),
+  .page :global(.quick-facts-section) {
+    background: #101d14;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page :global(.stack-screen) {
+    transition: none;
+  }
+}
